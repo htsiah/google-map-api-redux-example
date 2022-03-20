@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
-import { TextField, Divider, List } from '@mui/material';
+import { TextField, Divider, List, Button, Box } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { usePlacesWidget } from 'react-google-autocomplete';
 import { useSelector, useDispatch } from 'react-redux';
 
 import GoogleMapHistory from './GoogleMapHistory';
-import { ADD_MAP_DATA } from '../../store/actions/actions';
+import { ADD_MAP_DATA, CLEAR_MAP_HISTORY } from '../../store/actions/actions';
 
 const GoogleMapAutoComplete = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,10 @@ const GoogleMapAutoComplete = () => {
 
   const addMapDataHandler = (geometry, address) => {
     dispatch({ type: ADD_MAP_DATA, geometry: geometry, address: address });
+  };
+
+  const clearMapHistoryHandler = () => {
+    dispatch({ type: CLEAR_MAP_HISTORY });
   };
 
   const { ref: materialRef } = usePlacesWidget({
@@ -31,10 +36,19 @@ const GoogleMapAutoComplete = () => {
 
   return (
     <Fragment>
-      <TextField fullWidth id='search-a-place-input' label='Search a place' variant='outlined' inputRef={materialRef} />
+      <Box component='form' noValidate autoComplete='off'>
+        <TextField fullWidth id='search-a-place-input' label='Search a place' variant='outlined' autocomplete='off' inputRef={materialRef} />
+      </Box>
+
+      <br />
+      <br />
+      <Button variant='contained' startIcon={<DeleteIcon />} onClick={clearMapHistoryHandler} fullWidth>
+        Clear search history
+      </Button>
       <br />
       <br />
       <Divider>Recent search</Divider>
+
       <nav aria-label='secondary mailbox folders'>
         <List>
           {mapHistoryData.map((mapData) => (
