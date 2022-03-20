@@ -1,0 +1,45 @@
+{
+  "name": "google-map-api-reduc-example",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.27",
+    "@mui/lab": "latest",
+    "@mui/material": "latest",
+    "@mui/styled-engine-sc": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "autosuggest-highlight": "^3.2.1",
+    "lodash": "^4.17.21",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-google-autocomplete": "^2.6.1",
+    "react-redux": "^7.2.6",
+    "react-scripts": "latest",
+    "redux": "^4.1.2",
+    "styled-components": "latest"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "latest",
+    "dotenv": "^16.0.0"
+  }
+}
