@@ -4,7 +4,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Provider } from 'react-redux';
 
 import App from './components/App';
-import store from './store/store';
+import configureStore from './store/store';
+
+const store = configureStore();
 
 ReactDOM.render(
   <React.Fragment>

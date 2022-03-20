@@ -18,10 +18,11 @@
     "react-redux": "^7.2.6",
     "react-scripts": "latest",
     "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
     "styled-components": "latest"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "craco start cross-env NODE_ENV=development webpack -p",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
